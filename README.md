@@ -7,6 +7,12 @@
 </div>
 
 
+> [!NOTE]
+> **Proof of Concept & Infrastructure Blueprint**  
+> Dieses Repository ist Teil einer konzeptionellen Infrastruktur für Agentic Commerce. Es dient als **Proof of Concept (PoC)** und Framework-Vorlage. Der Code ist experimentell und soll Entwicklern als Ausgangspunkt dienen, um eigene M2M- und Agenten-Systeme weiterzuentwickeln. Es handelt sich noch nicht um ein finales, produktionsreifes Release.
+
+
+
 > Jede Domain braucht eine maschinenlesbare Visitenkarte für KI-Agenten.
 
 So wie `robots.txt` den Suchmaschinen sagt, was sie crawlen dürfen, sagt `/.well-known/mcp.json` den KI-Agenten, was sie tun können. 
@@ -100,13 +106,6 @@ Im Ordner `examples/` findest du Referenz-Implementierungen für reale Anwendung
 Die JSON Schema Definition befindet sich unter `spec/mcp-discovery.schema.json`. 
 Aktuelle Version: `1.0`
 
-
-## 🚀 Quantum Leap Architecture: JWS Cryptographic Proof
-
-Wir gehen über ein simples JSON-Schema hinaus. Um MITM-Angriffe zu verhindern, muss `mcp.json` kryptographisch sicher sein.
-- **JSON Web Signature (JWS):** Die Datei wird kryptographisch signiert und an das SSL/TLS-Zertifikat gekoppelt.
-- **Zero-Trust Discovery:** Agenten verifizieren die Signatur lokal, bevor sie einen Tool-Call absetzen.
-- **Dezentrales Fallback:** IPFS-CID Integration via DNS TXT für zensurresistente Kataloge.
 
 
 ---
