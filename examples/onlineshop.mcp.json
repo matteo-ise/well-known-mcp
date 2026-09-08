@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "name": "Muster Onlineshop",
+  "description": "E-Commerce API für Produktsuche, Warenkorb und Checkout.",
+  "endpoints": [
+    {
+      "url": "https://api.muster-shop.de/mcp",
+      "transport": "streamable-http",
+      "authentication": "none"
+    }
+  ],
+  "capabilities": {
+    "tools": ["product_search", "add_to_cart", "checkout", "check_inventory"]
+  },
+  "contact": {
+    "email": "ai-ops@muster-shop.de"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "name": "Müller Handwerk GmbH",
+  "description": "Handwerksbetrieb für Sanitär und Heizung. Terminbuchung und Angebotserstellung.",
+  "endpoints": [
+    {
+      "url": "https://mueller-handwerk.de/api/mcp",
+      "transport": "stdio",
+      "authentication": "api-key"
+    }
+  ],
+  "capabilities": {
+    "tools": ["schedule_appointment", "request_quote"]
+  }
+}

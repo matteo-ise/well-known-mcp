@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MCP Discovery",
+  "description": "Schema for /.well-known/mcp.json endpoint discovery.",
+  "type": "object",
+  "required": ["version", "name", "endpoints"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Schema version, must be '1.0'."
+    },
+    "name": {
+      "type": "string",
+      "description": "Organization or domain name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of what this MCP endpoint offers."
+    },
+    "endpoints": {
+      "type": "array",
+      "description": "Array of MCP server endpoints.",
+      "items": {
+        "type": "object",
+        "required": ["url", "transport"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL of the endpoint."
+          },
+          "transport": {
+            "type": "string",
+            "enum": ["streamable-http", "stdio", "websocket"],
+            "description": "Transport protocol for the endpoint."
+          },
+          "authentication": {
+            "type": "string",
+            "enum": ["oauth2", "api-key", "none"],
+            "description": "Authentication method required.",
+            "default": "none"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "capabilities": {
+      "type": "object",
+      "description": "High-level summary of tools, resources, and capabilities.",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "Organization contact info.",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "policies": {
+      "type": "object",
+      "description": "Policies and legal terms.",
+      "properties": {
+        "rate_limits": { "type": "string" },
+        "terms_of_service": { "type": "string", "format": "uri" },
+        "privacy_policy": { "type": "string", "format": "uri" }
+      }
+    },
+    "dns_txt": {
+      "type": "string",
+      "description": "Optional reference to _mcp DNS TXT record for redundancy."
+    }
+  }
+}

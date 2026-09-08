@@ -1,0 +1,21 @@
+{
+  "name": "@well-known-mcp/generator",
+  "version": "1.0.0",
+  "description": "Generator for .well-known/mcp.json files",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "well-known-mcp-generator": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.11"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
+  }
+}

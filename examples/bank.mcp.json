@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "name": "Muster Bank",
+  "description": "Banking API für Kontostand, Überweisungen und KYC.",
+  "endpoints": [
+    {
+      "url": "https://api.muster-bank.de/mcp",
+      "transport": "streamable-http",
+      "authentication": "oauth2"
+    },
+    {
+      "url": "wss://api.muster-bank.de/mcp-ws",
+      "transport": "websocket",
+      "authentication": "oauth2"
+    }
+  ],
+  "capabilities": {
+    "tools": ["get_balance", "initiate_transfer", "kyc_verification"]
+  }
+}

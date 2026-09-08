@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "name": "Steuerberater Muster GmbH",
+  "description": "Offizieller MCP Endpoint für die Steuerkanzlei Muster. Bietet DATEV und ELSTER Integrationen für KI Agenten.",
+  "endpoints": [
+    {
+      "url": "https://api.muster-steuer.de/mcp",
+      "transport": "streamable-http",
+      "authentication": "oauth2"
+    }
+  ],
+  "capabilities": {
+    "tools": ["datev_document_upload", "elster_status_check", "tax_consulting_scheduler"],
+    "resources": ["tax_guidelines_2026", "client_onboarding_form"]
+  },
+  "contact": {
+    "email": "agent-ops@muster-steuer.de",
+    "url": "https://muster-steuer.de/agent-info"
+  },
+  "policies": {
+    "rate_limits": "100 req/min per agent",
+    "terms_of_service": "https://muster-steuer.de/tos/agents",
+    "privacy_policy": "https://muster-steuer.de/privacy"
+  }
+}
