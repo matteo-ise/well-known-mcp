@@ -100,6 +100,15 @@ Im Ordner `examples/` findest du Referenz-Implementierungen für reale Anwendung
 Die JSON Schema Definition befindet sich unter `spec/mcp-discovery.schema.json`. 
 Aktuelle Version: `1.0`
 
+
+## 🚀 Quantum Leap Architecture: JWS Cryptographic Proof
+
+Wir gehen über ein simples JSON-Schema hinaus. Um MITM-Angriffe zu verhindern, muss `mcp.json` kryptographisch sicher sein.
+- **JSON Web Signature (JWS):** Die Datei wird kryptographisch signiert und an das SSL/TLS-Zertifikat gekoppelt.
+- **Zero-Trust Discovery:** Agenten verifizieren die Signatur lokal, bevor sie einen Tool-Call absetzen.
+- **Dezentrales Fallback:** IPFS-CID Integration via DNS TXT für zensurresistente Kataloge.
+
+
 ---
 
 **Teil des Agentic Commerce Stack von Matteo Ise:**
